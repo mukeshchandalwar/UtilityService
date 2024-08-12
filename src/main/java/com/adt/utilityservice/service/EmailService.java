@@ -1,7 +1,6 @@
 package com.adt.utilityservice.service;
 
 import com.adt.utilityservice.model.Mail;
-import freemarker.template.Configuration;
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,9 +17,6 @@ public class EmailService implements CommonEmailService {
 
     @Autowired
     private JavaMailSender javaMailSender;
-
-    @Autowired
-    private Configuration freemarkerConfig;
 
     @Value("${spring.mail.username}")
     private String fromEmail;
