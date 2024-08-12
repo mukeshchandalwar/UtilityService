@@ -54,12 +54,6 @@
 			<optional>true</optional>
 		</dependency>
 
-		<!-- Freemarker for template processing -->
-		<dependency>
-			<groupId>org.freemarker</groupId>
-			<artifactId>freemarker</artifactId>
-			<version>${freemarker.version}</version>
-		</dependency>
 
 		<!-- Javax Mail API -->
 		<dependency>

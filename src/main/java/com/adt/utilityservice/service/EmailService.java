@@ -18,10 +18,7 @@ public class EmailService implements CommonEmailService {
 
     @Autowired
     private JavaMailSender javaMailSender;
-
-    @Autowired
-    private Configuration freemarkerConfig;
-
+    
     @Value("${spring.mail.username}")
     private String fromEmail;
 
