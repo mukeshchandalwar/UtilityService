@@ -21,15 +21,17 @@ public class EmailService implements CommonEmailService {
     @Value("${spring.mail.username}")
     private String fromEmail;
 
+    @Value("${spring.mail.username}")
+    private String sender;
+
     @Async
     public void sendEmail(Mail mail) throws MessagingException {
         MimeMessage mimeMessage = javaMailSender.createMimeMessage();
         MimeMessageHelper helper = new MimeMessageHelper(mimeMessage, true, StandardCharsets.UTF_8.name());
-        helper.setFrom(mail.getFrom());
+        helper.setFrom(sender);
         helper.setTo(mail.getTo());
         helper.setText(mail.getContent(), true);
         helper.setSubject(mail.getSubject());
-        helper.setFrom(mail.getFrom());
 
         javaMailSender.send(mimeMessage);
     }
